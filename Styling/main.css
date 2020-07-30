@@ -31,11 +31,31 @@
 .indigo{
   height: 50px;
   width: 150px;
-  background-color: #9932CC;
+  background-color: indigo;
 }
 
 .violet{
   height: 50px;
   width: 150px;
   background-color: violet;
+}
+
+
+.circle{
+  width: 100px;
+  height: 100px;
+  background: red;
+  border-radius: 50%;
+}
+
+.square{
+  width: 100px;
+  height: 100px;
+  background: red;
+}
+
+.rectangle{
+  width: 200px;
+  height: 100px;
+  background: red;
 }

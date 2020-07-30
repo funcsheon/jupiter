@@ -17,6 +17,20 @@
     <div id="app">React has not rendered yet</div>
     <script type="text/babel">
 
+      var ColorSpectrum = function(){
+        return(
+        <div>
+          <Red/>
+          <Orange/>
+          <Yellow/>
+          <Green/>
+          <Blue/>
+          <Indigo/>
+          <Violet/>
+        </div>
+      );
+    }
+
       var Red = function() {
         var redStyle = {
           height: 50,
@@ -95,9 +109,7 @@
         }
 
       ReactDOM.render(
-        <div>
-          <Red/><Orange/><Yellow/><Green/><Blue/><Indigo/><Violet/>
-        </div>,
+        <ColorSpectrum/>,
         document.getElementById("app")
       );
     </script>
