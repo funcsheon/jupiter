@@ -44,10 +44,8 @@
       render() {
         return(
           <div>
-            {
-              <h1>{this.props.firstname}, {this.props.lastname}</h1>,
+              <h1>{this.props.firstname} {this.props.lastname}</h1>,
               <img src={this.props.img}/>
-             }
           </div>
         );
       }
@@ -55,9 +53,9 @@
 
     ReactDOM.render(
       <FullName
-        firstname="Rob"
-        lastname="Merrill"
-        img="https://pbs.twimg.com/profile_images/1186062718492708867/vDzciKEv_400x400.jpg
+        firstname="Alina"
+        lastname="Duzhar"
+        img="https://pbs.twimg.com/profile_images/1186062718492708867/vDzciKEv_400x400.jpg"
         />,
       document.getElementById("app")
     );
