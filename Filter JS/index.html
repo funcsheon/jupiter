@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- REACT LIBRARY -->
+  <!-- <script src="https://unpkg.com/react@15.5.4/dist/react.js"></script> -->
+  <!-- REACT DOM LIBRARY -->
+  <!-- <script src="https://unpkg.com/react-dom@15.5.4/dist/react-dom.js"></script> -->
+  <!-- BABEL LIBRARY -->
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.25.0/babel.min.js"></script> -->
+  <!-- <script src="https://kit.fontawesome.com/da774eb293.js" crossorigin="anonymous"></script> -->
+  <title>Friendly</title>
+</head>
+<body>
+//  <div id="app">React has not rendered yet</div>
+  <script>
+
+// var testScores = [76, 55, 22, 88, 93, 5];
+// var graduation = testScores.filter(function(test){
+//    return test < 59;
+// })
+// console.log(graduation);
+
+<!-- better to use filter instead of for loop -->
+
+// var weather = [72, 84, 34, 92, 24, 47, 85, 72, 54];
+// var goOutside = weather.filter(function(warm){
+//   return warm > 70;
+//
+// })
+// console.log(goOutside);
+
+var forecast = [
+{day: 'Monday', sun: true},
+{day: 'Tuesday', sun: false},
+{day: 'Wednesday', sun: false},
+{day: 'Thursday', sun: true},
+{day: 'Friday', sun: false},
+{day: 'Saturday', sun: true},
+{day: 'Sunday', sun: false}
+];
+
+var sunnyDays = forecast.filter(function(sunny){
+  return sunny.sun;
+})
+  console.log(sunnyDays);
+
+  </script>
+</body>
+</html>
