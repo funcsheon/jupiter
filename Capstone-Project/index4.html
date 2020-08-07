@@ -106,67 +106,63 @@ function UserName(props){
     );
   }
 
-  function FriendLy(props){
-      var people = props.people;
-      var peopleItem = people.map(function(person){
-      var friendlyStyle = {
-            display: "inline-block",
-            margin: 20,
-            width: 290,
-            height: 320,
-            paddingLeft: 75,
-            backgroundColor: "rgb(246, 246, 246)"
-          };
-        return <div style={friendlyStyle}>
-          <Avatar img={person.img}/>
-          <UserName name={person.name}/>
-          <GetConnected/>
-        </div>
-      });
-        return(
-        <div>{peopleItem}</div>
-      );
-    }
 
-//   function FriendLy(props) {
-//   // renamed props.people to people
-//   var people = props.people;
-//   // iterate through the array
-//   // map creates a new array
-//
-//   var peopleItem = people.map(function(person) {
-//     // assign styling to Friendly Component
-//     var friendlyStyle = {
-//       display: 'inline-block',
-//       margin: 20,
-//       height: 300,
-//       width: 200,
-//       padding: 0,
-//       backgroundColor: "#FFF",
-//       WebkitFilter: "drop-shadow(0px 0px 5px #555)",
-//       filter: "drop-shadow(0px 0px 5px #555)"
-//     };
-//       // Return the exact same content but make sure JSX is rendering the right JavaScript object (person)
-//       return <div style={friendlyStyle}>
-//         <Avatar img={person.img}/>
-//         <UserName name={person.name}/>
-//         <GetConnected/>
-//       </div>
-//   });
-//   return(
-//     <div>{peopleItem}</div>
-//   );
-// }
+
+  function FriendLy(props){
+    var maleFilterItem = props.people.filter(function(person){
+    return person.gender === "male";
+  }) .map(function(person){
+    var friendlyStyle = {
+          display: "inline-block",
+          margin: 20,
+          width: 290,
+          height: 320,
+          paddingLeft: 75,
+          backgroundColor: "rgb(246, 246, 246)"
+        };
+      return <div key={person.id} style={friendlyStyle}>
+        <Avatar img={person.img}/>
+        <UserName name={person.name}/>
+        <GetConnected/>
+      </div>
+     });
+    var femaleFilterItem = props.people.filter(function(person){
+    return person.gender === "female";
+  }) .map(function(person){
+    var friendlyStyle = {
+          display: "inline-block",
+          margin: 20,
+          width: 290,
+          height: 320,
+          paddingLeft: 75,
+          backgroundColor: "rgb(246, 246, 246)"
+        };
+      return <div key={person.id} style={friendlyStyle}>
+        <Avatar img={person.img}/>
+        <UserName name={person.name}/>
+        <GetConnected/>
+      </div>
+    });
+          return (
+          <div>
+          <h1>Males</h1>
+          <div>{maleFilterItem}</div>
+          <hr/>
+          <h1>Females</h1>
+          <div>{femaleFilterItem}</div>
+          </div>
+          );
+        }
 
   var people =[
-  {name:"Alina", img:"https://pbs.twimg.com/profile_images/1186062718492708867/vDzciKEv_400x400.jpg"},
-  {name:"Vicky", img:"https://pbs.twimg.com/profile_images/1186062718492708867/vDzciKEv_400x400.jpg"},
-  {name:"Nicu", img:"https://pbs.twimg.com/profile_images/1186062718492708867/vDzciKEv_400x400.jpg"},
-  {name:"Alex",img:"https://pbs.twimg.com/profile_images/1186062718492708867/vDzciKEv_400x400.jpg"},
-  {name:"Marina",img:"https://pbs.twimg.com/profile_images/1186062718492708867/vDzciKEv_400x400.jpg"},
-  {name:"Bruna",img:"https://pbs.twimg.com/profile_images/1186062718492708867/vDzciKEv_400x400.jpg"},
-  {name:"Joel",img:"https://pbs.twimg.com/profile_images/1186062718492708867/vDzciKEv_400x400.jpg"},
-  {name:"Tom", img:"https://pbs.twimg.com/profile_images/1186062718492708867/vDzciKEv_400x400.jpg"}
+  {id:0, name:"Alina", gender:"female", img:"https://pbs.twimg.com/profile_images/1186062718492708867/vDzciKEv_400x400.jpg"},
+  {id:1, name:"Vicky", gender:"female", img:"https://pbs.twimg.com/profile_images/1186062718492708867/vDzciKEv_400x400.jpg"},
+  {id:2, name:"Nicu", gender:"male", img:"https://pbs.twimg.com/profile_images/1186062718492708867/vDzciKEv_400x400.jpg"},
+  {id:3, name:"Alex", gender:"male", img:"https://pbs.twimg.com/profile_images/1186062718492708867/vDzciKEv_400x400.jpg"},
+  {id:4, name:"Marina", gender:"female", img:"https://pbs.twimg.com/profile_images/1186062718492708867/vDzciKEv_400x400.jpg"},
+  {id:5, name:"Bruna", gender:"female", img:"https://pbs.twimg.com/profile_images/1186062718492708867/vDzciKEv_400x400.jpg"},
+  {id:6, name:"Joel", gender:"male", img:"https://pbs.twimg.com/profile_images/1186062718492708867/vDzciKEv_400x400.jpg"},
+  {id:7, name:"Tom", gender:"male", img:"https://pbs.twimg.com/profile_images/1186062718492708867/vDzciKEv_400x400.jpg"}
   ];
 
   ReactDOM.render(
